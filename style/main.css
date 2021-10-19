@@ -1,5 +1,5 @@
 :root {
-    --vermelho: #E50914;
+    --roxo: #551A8B;
     --preto   : #141414;
 }
 
@@ -19,14 +19,14 @@ body {
 }
 
 header .container {
-    margin-top    : 1rem;
+    margin-top: 0rem;
     display       : flex;
     flex-direction: row;
     align-items   : center;
 }
 
 header .logo {
-    color      : var(--vermelho);
+    color      : var(--roxo);
     font-family: 'Arial Black';
     font-size  : 25px;
 }
@@ -49,15 +49,18 @@ header nav {
 /*Anime principal*/
 
 .anime-principal {
-    font-size            : 1.2rem;
-    background           : linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)100%), url('../img/animes/steins-gate.jpg');
-    height               : 40rem;
-    background-size      : cover;
-    background-position  : center center;
-    display              : flex;
-    flex-direction       : column;
-    justify-content      : center;
-    align-items          : flex-start;
+    font-size          : 1.2rem;
+    background         : linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)100%), url('../img/animes/steins-gate.jpg');
+    height             : 40rem;
+    background-size    : cover;
+    background-position: center center;
+    display            : flex;
+    flex-direction     : column;
+    justify-content    : flex-start;
+}
+
+.anime-principal header .container {
+    margin-top: 2rem;
 }
 
 .anime-principal .titulo {
@@ -67,9 +70,13 @@ header nav {
 }
 
 .anime-principal .descricao {
-    margin-top   : 2%;
-    margin-bottom: 40px;
+    margin-top     : 2%;
+    margin-bottom  : 40px;
     /*margin-right : 40rem;*/
+}
+
+.anime-principal .container {
+    margin-top: 6rem;
 }
 
 .botoes-principal {
@@ -78,6 +85,7 @@ header nav {
     margin-right: 15px;
     font-size   : 0.8em;
     cursor      : pointer;
+    border-radius: 2em;
 }
 
 .botoes-principal i {
@@ -106,12 +114,47 @@ header nav {
     margin-left: 4rem;
 }
 
+
+/*carrosel de animes*/
+
 .box-animes {
     height : 25rem;
     width  : 100%;
     display: block;
 }
 
-.carrosel-animes{
+.carrosel-animes {
     margin-top: 1rem;
+}
+
+.overlay {
+    position        : absolute;
+    top             : 0;
+    bottom          : 0;
+    left            : 0;
+    right           : 0;
+    height          : 100%;
+    width           : 100%;
+    opacity         : 0;
+    transition      : .3s ease;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.item {
+    position: relative;
+    width   : 100%;
+}
+
+.item:hover .overlay {
+    opacity: 1;
+}
+
+.icon {
+    font-size    : 100px;
+    position     : absolute;
+    top          : 50%;
+    left         : 50%;
+    transform    : translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align   : center;
 }
