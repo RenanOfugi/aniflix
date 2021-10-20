@@ -15,11 +15,12 @@ $('.owl-carousel').owlCarousel({
     }
 })
 
+//Criando objeto de vídeo do YouTube
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        height: '360',
-        width: '640',
+        height: '100%',
+        width: '100%',
         videoId: 'uMYhjVwp0Fk',
         events: {
             'onReady': onPlayerReady,
@@ -34,6 +35,16 @@ const closeButton = document.querySelector(".close-button");
 function toggleModalOpen() {
     modal.classList.toggle("show-modal");
     player.playVideo()
+    var e = document.getElementById("player");
+    if (e.requestFullscreen) {
+        e.requestFullscreen();
+    } else if (e.webkitRequestFullscreen) {
+        e.webkitRequestFullscreen();
+    } else if (e.mozRequestFullScreen) {
+        e.mozRequestFullScreen();
+    } else if (e.msRequestFullscreen) {
+        e.msRequestFullscreen();
+    }
 }
 
 function toggleModalClose() {
@@ -57,7 +68,6 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
     event.target.playVideo();
 }

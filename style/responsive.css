@@ -1,35 +1,53 @@
-@media screen and (max-width:950px) {
+@media screen and (max-width:900px) {
     header .container {
         display       : flex;
         flex-direction: column;
+        margin-left   : 0;
+    }
+
+    .anime-principal .container {
+        margin-top : 3rem;
         margin-left: 0;
     }
 
     .anime-principal .titulo {
-        margin-top : 3%;
+        margin-top : 0;
+        margin-left: 3rem;
         font-size  : 1.5rem;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
 
     .anime-principal .descricao {
         margin-top   : 2%;
+        margin-left  : 3rem;
         margin-bottom: 3rem;
         margin-right : 5rem;
+        font-size    : 0.75em;
     }
 
     header nav {
-        margin-left: 0;
+        align-items: center;
+        margin-top : 2rem;
     }
 
     .botoes-principal {
-        margin-top: 5px;
-        width     : 300px;
-        margin-left: 0;
+        margin-top  : 5px;
+        display     : block;
+        margin-left : auto;
+        margin-right: auto;
+        width       : 300px;
+    }
+
+    /*Youtube*/
+
+    .modal-content {
+        width: 50%;
+        height: 50%;
     }
 }
 
-@media screen and (min-width:1000px){
-    .descricao{
+@media screen and (min-width:1000px) {
+    .descricao {
         width: 50%;
     }
 }
